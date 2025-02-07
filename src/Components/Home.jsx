@@ -8,6 +8,7 @@ import Horizontalcards from "../Partials/Horizontalcards";
 import Loader from "../Partials/Loader";
 
 const Home = () => {
+  document.title = "Movixer | HomePage";
   const [wallpaper, setwallpaper] = useState(null);
   const [trending, settrending] = useState(null);
   const [category, setcategory] = useState("all");
@@ -49,7 +50,7 @@ const Home = () => {
             <h3 className=" font-semibold text-2xl ">
               Buzzing Now
             </h3>
-            <Dropdown title="Filter" func={(e)=>setcategory(e.target.value)} options={["all", "tv", "movie"]} />
+            <Dropdown title="Filter" func={setcategory} options={["all", "tv", "movie"]} />
           </div>
           <Horizontalcards data={trending} />
         </div>
