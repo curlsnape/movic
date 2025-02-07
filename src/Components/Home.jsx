@@ -36,7 +36,7 @@ const Home = () => {
       getwallpaper();
     }
     gettrending();
-  }, [wallpaper,category]); // Runs whenever wallpaper is updated (including when it's null)
+  }, [category]); // Runs whenever wallpaper is updated (including when it's null)
 
   return wallpaper && trending ? (
     <div className="w-full h-full flex">
@@ -46,10 +46,10 @@ const Home = () => {
           <Topnav />
           <Header data={wallpaper} />
           <div className="w-full justify-between py-3  flex">
-            <h3 className="font-[figtree] font-semibold text-2xl ">
+            <h3 className=" font-semibold text-2xl ">
               Buzzing Now
             </h3>
-            <Dropdown title="Filter" func={setcategory} options={options} />
+            <Dropdown title="Filter" func={(e)=>setcategory(e.target.value)} options={["all", "tv", "movie"]} />
           </div>
           <Horizontalcards data={trending} />
         </div>

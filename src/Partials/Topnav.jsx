@@ -18,7 +18,7 @@ function Topnav() {
     getsearches();
   }, [query]);
   return (
-    <div className="w-full  font-[quicksand] h-[15vh] flex gap-5 items-center relative mx-auto">
+    <div className="w-full  h-[15vh] flex gap-5 items-center relative mx-auto">
       <i className="ri-search-line text-lg h-6 w-6  flex  justify-center items-center text-zinc-400"></i>
       <input
         onChange={(e) => setquery(e.target.value)}

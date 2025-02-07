@@ -9,47 +9,43 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
   const navigate = useNavigate();
-  const [category, setcategory] = useState("all");
-  const [duration, setduration] = useState("day");
-  const [page, setpage] = useState(1);
-  const [hasmore, sethasmore] = useState(true);
-  const [trending, settrending] = useState([]);
-  const gettrending = async () => {
+  const [category, setCategory] = useState("all");
+  const [duration, setDuration] = useState("day");
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const [trending, setTrending] = useState([]);
+
+  const getTrending = async () => {
     try {
       const { data } = await axios.get(
         `/trending/${category}/${duration}?page=${page}`
       );
       if (data.results.length > 0) {
-        settrending((prev) => [...prev, ...data.results]);
-        setpage(page + 1);
+        setTrending((prev) => [...prev, ...data.results]);
+        setPage((prevPage) => prevPage + 1);
       } else {
-        sethasmore(false);
+        setHasMore(false);
       }
     } catch (error) {
       console.log(error);
     }
   };
-  const refreshhandler = () => {
-    if (trending.length === 0) {
-      gettrending();
-    } else {
-      setpage(1);
-      settrending([]);
-      gettrending();
-    }
-  };
 
   useEffect(() => {
-    // gettrending();
-    refreshhandler();
+    // Reset state and fetch new data when category or duration changes
+    setPage(1);
+    setTrending([]);
+    setHasMore(true);
+    getTrending();
   }, [category, duration]);
-  return trending ? (
-    <div className="w-full h-full overflow-y-auto scroll-smooth px-20 font-[figtree]">
-      <div className="nav w-full h-[10vh] flex  items-center justify-between">
+
+  return (
+    <div className="w-full h-full overflow-y-auto scroll-smooth px-20">
+      <div className="nav w-full h-[10vh] flex items-center justify-between">
         <div className="logo flex text-xl items-center">
           <i
             onClick={() => navigate("/")}
-            class="ri-arrow-left-s-line text-2xl transition-all hover:text-purple-600 "
+            className="ri-arrow-left-s-line text-2xl transition-all hover:text-purple-600 cursor-pointer"
           ></i>
           <h3>Trending</h3>
         </div>
@@ -57,28 +53,19 @@ const Trending = () => {
           <Topnav />
           <Dropdown
             title="Filter"
-            func={setcategory}
+            func={(e)=>setCategory(e.target.value)}
             options={["all", "tv", "movie"]}
           />
           <div className="w-[10px]"></div>
           <Dropdown
             title="Filter"
-            func={setduration}
+            func={(e)=>setDuration(e.target.value)}
             options={["day", "week"]}
           />
         </div>
       </div>
-      <InfiniteScroll
-        dataLength={trending.length}
-        next={gettrending}
-        hasMore={hasmore}
-        loader={<h1>Loading...</h1>}
-      >
         <Cards data={trending} />
-      </InfiniteScroll>
     </div>
-  ) : (
-    <Loader />
   );
 };
 

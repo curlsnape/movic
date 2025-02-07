@@ -14,8 +14,8 @@ const Header = ({ data }) => {
       }}
       className="w-full flex flex-col justify-end items-start pb-[3%] px-10 rounded h-[60vh]"
     >
-      <div className="text w-[70%] font-[figtree]">
-        <h2 className="text-5xl font-[bebas_neue] font-bold capitalize">
+      <div className="text w-[70%] ">
+        <h2 className="text-5xl  font-bold capitalize">
           {data.name || data.title}
         </h2>
         <div className="flex my-2 gap-5 items-center">
