@@ -59,13 +59,13 @@ const Trending = () => {
           <Topnav />
           <Dropdown
             title="Filter"
-            func={(e) => setCategory(e.target.value)}
+            func={setCategory}
             options={["all", "tv", "movie"]}
           />
           <div className="w-[10px]"></div>
           <Dropdown
             title="Duration"
-            func={(e) => setDuration(e.target.value)}
+            func={setDuration}
             options={["day", "week"]}
           />
         </div>
