@@ -1,0 +1,16 @@
+@import "tailwindcss";
+*{
+    font-family: figtree;
+}
+::-webkit-scrollbar{
+    height:7px;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: rgb(58, 58, 58);
+}
+::-webkit-scrollbar-thumb:hover{
+    border-radius: 10px;
+    background-color:rgb(101,95,255);
+}
