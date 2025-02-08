@@ -7,7 +7,7 @@ import Dropdown from '../Partials/Dropdown';
 import Topnav from '../Partials/Topnav';
 
 const Tv = () => {
-    document.title = "Movixer | Movies";
+    document.title = "Movixer | TV Shows";
     const [category, setcategory] = useState("airing_today")
     const navigate = useNavigate()
     const [tvshows, settvshows] = useState([])
@@ -46,7 +46,7 @@ const Tv = () => {
       <div className="logo flex text-xl items-center">
         <i
           onClick={() => navigate("/")}
-          className="ri-arrow-left-s-line text-2xl transition-all hover:text-purple-600 cursor-pointer"
+          className="ri-arrow-left-line text-2xl transition-all hover:text-purple-600 cursor-pointer"
         ></i>
         <h3>Tv shows <span className='text-xs'>{category}</span></h3>
       </div>

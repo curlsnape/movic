@@ -6,7 +6,7 @@ const Header = ({ data }) => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6),rgba(0,0,0,0.9)),url(https://image.tmdb.org/t/p/original/${
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4),rgba(0,0,0,0.9)),url(https://image.tmdb.org/t/p/original/${
           data.backdrop_path || data.poster_path || data.profile_path
         })`,
         backgroundPosition: "top:40%",

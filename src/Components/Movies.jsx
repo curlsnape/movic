@@ -46,7 +46,7 @@ const Movies = () => {
         <div className="logo flex text-xl items-center">
           <i
             onClick={() => navigate("/")}
-            className="ri-arrow-left-s-line text-2xl transition-all hover:text-purple-600 cursor-pointer"
+            className="ri-arrow-left-line text-2xl transition-all hover:text-purple-600 cursor-pointer"
           ></i>
           <h3>Movie List <span className='text-xs'>{category}</span></h3>
         </div>

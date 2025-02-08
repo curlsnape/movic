@@ -14,12 +14,12 @@ const Sidenvabar = () => {
           <Link to="/popular" className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>🚀 Popular</Link>
           <Link to="/movies" className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>🎬 Movies</Link>
           <Link to="/tv" className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>📺 Tv Series</Link>
-          <Link className='hover:bg-purple-600 rounded py-3 mb-2 px-1  transition-all duration-300 hover:px-5'>🎭 People</Link>
+          <Link to="/celebrities" className='hover:bg-purple-600 rounded py-3 mb-2 px-1  transition-all duration-300 hover:px-5'>🎭 People</Link>
         </nav>
         <nav className='flex flex-col mt-5  font-semibold'> 
           <h3 className='text-lg'>About Movixer...</h3>   
-          <Link className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>📝 About</Link>
-          <Link className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>📞 Contact</Link>
+          <Link to="/about" className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>📝 About</Link>
+          <Link to="/contact" className='hover:bg-purple-600 rounded py-3 px-1  transition-all duration-300 hover:px-5'>📞 Contact</Link>
          
         </nav>
     </div>
