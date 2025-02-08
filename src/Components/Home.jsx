@@ -37,7 +37,7 @@ const Home = () => {
       getwallpaper();
     }
     gettrending();
-  }, [category]); // Runs whenever wallpaper is updated (including when it's null)
+  }, [category]); 
 
   return wallpaper && trending ? (
     <div className="w-full h-full flex">

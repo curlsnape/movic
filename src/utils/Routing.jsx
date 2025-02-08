@@ -4,6 +4,7 @@ import Home from '../Components/Home'
 import Trending from '../Components/Trending'
 import Popular from '../Components/Popular'
 import Movies from '../Components/Movies'
+import Tv from '../Components/Tv'
 
 function Routing() {
   return (
@@ -13,6 +14,7 @@ function Routing() {
             <Route path='/trending' element={<Trending/>}/>
             <Route path='/popular' element={<Popular/>}/>
             <Route path='/movies' element={<Movies/>}/>
+            <Route path='/tv' element={<Tv/>}/>
         </Routes>
     </div>
   )
